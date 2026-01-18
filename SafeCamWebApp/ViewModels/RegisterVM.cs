@@ -4,31 +4,31 @@ namespace SafeCamWebApp.ViewModels.Account
 {
     public class RegisterVM
     {
-        [Required(ErrorMessage = "Ad mütləq daxil edilməlidir")]
-        [MinLength(3, ErrorMessage = "Ad ən az 3 simvol olmalıdır")]
-        [MaxLength(25, ErrorMessage = "Ad ən çox 25 simvol ola bilər")]
+        [Required(ErrorMessage = "The name must be entered")]
+        [MinLength(3, ErrorMessage = "Name must be at least 3 characters long.")]
+        [MaxLength(25, ErrorMessage = "The name can be up to 25 characters long.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Soyad mütləq daxil edilməlidir")]
-        [MinLength(3, ErrorMessage = "Soyad ən az 3 simvol olmalıdır")]
-        [MaxLength(25, ErrorMessage = "Soyad ən çox 25 simvol ola bilər")]
+        [Required(ErrorMessage = "Last name must be entered.")]
+        [MinLength(3, ErrorMessage = "Last name must be at least 3 characters long.")]
+        [MaxLength(25, ErrorMessage = "Last name can be up to 25 characters long")]
         public string SurName { get; set; }
 
-        [Required(ErrorMessage = "İstifadəçi adı mütləq daxil edilməlidir")]
+        [Required(ErrorMessage = "Username is required.")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Email mütləq daxil edilməlidir")]
-        [EmailAddress(ErrorMessage = "Düzgün email formatı daxil edin")]
+        [Required(ErrorMessage = "Email must be entered")]
+        [EmailAddress(ErrorMessage = "Please enter the correct email format.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Şifrə mütləq daxil edilməlidir")]
+        [Required(ErrorMessage = "Password must be entered.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Şifrə təkrarı mütləq daxil edilməlidir")]
+        [Required(ErrorMessage = "Password confirmation is required.")]
         [DataType(DataType.Password)]
-        [Compare(nameof(Password), ErrorMessage = "Şifrələr uyğun gəlmir")]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }
