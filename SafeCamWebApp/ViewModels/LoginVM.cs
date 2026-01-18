@@ -4,10 +4,10 @@ namespace SafeCamWebApp.ViewModels.Account
 {
     public class LoginVM
     {
-        [Required(ErrorMessage = "Email və ya İstifadəçi adı daxil edilməlidir")]
+        [Required(ErrorMessage = "Email or Username is required.")]
         public string UserNameOrEmail { get; set; }
 
-        [Required(ErrorMessage = "Şifrə daxil edilməlidir")]
+        [Required(ErrorMessage = "Password required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
